@@ -2,6 +2,7 @@
 
 A simple, light-weight, zero dependency, JavaScript package to enable dark mode functionality on your website.
 
+<br/><br/>
 ## Installation
 
 Using **npm**
@@ -12,6 +13,7 @@ Using **yarn**
 
 `$ yarn add toggledarkjs`
 
+<br/><br/>
 ## Usage
 
 First things first. Add toggleDarkJS to your project.
@@ -26,7 +28,10 @@ Using **CommonJS**
 
 Now create an array with CSS variables you want to update with theme:
 
-`const styles = [{name: '--primary-color', light: 'white', dark: 'black'}, {name: '--secondary-color', light: 'black', dark: 'white'}];`
+    const styles = [
+        {name: '--primary-color', light: 'white', dark: 'black'}, 
+        {name: '--secondary-color', light: 'black', dark: 'white'},
+    ];
 
 Now setup your darkMode boolean variable:
 
@@ -43,6 +48,7 @@ Now `--primary-color` and `--secondary-color` are available project-wide and you
         color: var(--secondary-color);
     }
 
+<br/><br/>
 ## Code Snippet
 
 Here's a working code sample in React JS:
@@ -81,6 +87,7 @@ Here's a working code sample in React JS:
         border: 1px solid var(--secondary-color);
     }
 
+<br/><br/>
 ## Style object
 
     [
@@ -101,6 +108,7 @@ For example:
         },
     ]
 
+<br/><br/>
 ## Parameters
 
 | Parameter  | Type          | Required | Default |
