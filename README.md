@@ -20,11 +20,11 @@ First things first. Add toggleDarkJS to your project.
 
 Using **ES6**
 
-`import toggleDarkJS from "toggledarkjs";`
+    import toggleDarkJS from "toggledarkjs";
 
 Using **CommonJS**
 
-`const toggleDarkJS = require('toggledarkjs');`
+    const toggleDarkJS = require('toggledarkjs');
 
 Now create an array with CSS variables you want to update with theme:
 
@@ -35,11 +35,11 @@ Now create an array with CSS variables you want to update with theme:
 
 Now setup your darkMode boolean variable:
 
-`const isDarkMode = false;`
+    const isDarkMode = false;
 
 Finally, call the toggleDarkJS and let it handle the rest:
 
-`toggleDarkJS(isDarkMode, styles);`
+    toggleDarkJS(isDarkMode, styles);
 
 Now `--primary-color` and `--secondary-color` are available project-wide and you can use them in any of your CSS file, without importing anything, like this:
 
@@ -59,15 +59,19 @@ Here's a working code sample in React JS:
 
     useEffect(() => {
         toggleDarkJS(isDarkMode, [
-            {name: '--primary-color', light: 'white', dark: 'black'},
-            {name: '--secondary-color', light: 'black', dark: 'white'},
+            {name: '--primary-color', light: '#FFFFFF', dark: '#000000'},
+            {name: '--secondary-color', light: '#000000', dark: '#FFFFFF'},
         ]);
     }, [isDarkMode]);
 
     return (
         <div className={'app'}>
             <h1 className={'title'}>hello world, this is toggleDarkJS</h1>
-            <button className={'actionButton'} onClick={() => setIsDarkMode(!isDarkMode)}>Toggle theme</button>
+            <button 
+                className={'actionButton'} 
+                onClick={() => setIsDarkMode(!isDarkMode)}
+                >Toggle theme
+            </button>
         </div>
     );
 
@@ -85,6 +89,19 @@ Here's a working code sample in React JS:
         background: transparent;
         color: var(--secondary-color);
         border: 1px solid var(--secondary-color);
+    }
+
+<br/><br/>
+## Good to have, but not necessary
+
+You should also create a separate CSS file with the same variable names, that you used in the styles array. 
+These styles will be applied in case, javascript files do not load properly. This is more of a backup plan.
+
+**theme.css**
+
+    :root{
+        --primary-color: '#FFFFFF';
+        --secondary-color: '#000000';
     }
 
 <br/><br/>
