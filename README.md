@@ -7,11 +7,11 @@ A simple, light-weight, zero dependency, JavaScript package to enable dark mode 
 
 Using **npm**
 
-`$ npm i --save toggledarkjs`
+    $ npm i --save toggledarkjs
 
 Using **yarn**
 
-`$ yarn add toggledarkjs`
+    $ yarn add toggledarkjs
 
 <br/><br/>
 ## Usage
